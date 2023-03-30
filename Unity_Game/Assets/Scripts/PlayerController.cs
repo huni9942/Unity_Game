@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         // ** 입력받은 값으로 플레이어 이동
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
-        rigid.MovePosition(rigid.position + inputVec);
+        rigid.MovePosition(rigid.position + nextVec);
     }
 
     private void LateUpdate()
