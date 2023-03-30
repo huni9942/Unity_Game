@@ -15,7 +15,7 @@ C:/Users/SGA/Desktop/Unity_Game/Unity_Game/Unity_Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50993
+51092
 Successfully changed project path to: C:/Users/SGA/Desktop/Unity_Game/Unity_Game/Unity_Game
 C:/Users/SGA/Desktop/Unity_Game/Unity_Game/Unity_Game
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/SGA/Desktop/Unity_Game/Unity_Game/Unity_Game
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [13640] Host "[IP] 192.168.0.202 [Port] 0 [Flags] 2 [Guid] 619802507 [EditorId] 619802507 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HQKDT44) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [6232] Host "[IP] 192.168.0.202 [Port] 0 [Flags] 2 [Guid] 2914888900 [EditorId] 2914888900 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HQKDT44) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [13640] Host "[IP] 192.168.0.202 [Port] 0 [Flags] 2 [Guid] 619802507 [EditorId] 619802507 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HQKDT44) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [6232] Host "[IP] 192.168.0.202 [Port] 0 [Flags] 2 [Guid] 2914888900 [EditorId] 2914888900 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HQKDT44) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 55.37 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 49.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.20f1 (577897200b8b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/Resources/UnitySubsystems
@@ -67,40 +67,40 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56200
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56016
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003239 seconds.
+Registered in 0.003147 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Android Extension - Scanning For ADB Devices 143 ms
-Refreshing native plugins compatible for Editor in 50.06 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 49.44 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.569 seconds
+- Completed reload, in  0.563 seconds
 Domain Reload Profiling:
-	ReloadAssembly (569ms)
-		BeginReloadAssembly (60ms)
+	ReloadAssembly (563ms)
+		BeginReloadAssembly (56ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (446ms)
-			LoadAssemblies (59ms)
+		EndReloadAssembly (445ms)
+			LoadAssemblies (55ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (69ms)
+			SetupTypeCache (68ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (18ms)
 			SetupLoadedEditorAssemblies (325ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (188ms)
+				InitializePlatformSupportModulesInManaged (189ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (50ms)
+				RefreshPlugins (49ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (58ms)
+				ProcessInitializeOnLoadAttributes (59ms)
 				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -108,52 +108,52 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002702 seconds.
+Registered in 0.002558 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\SGA\Desktop\Unity_Game\Unity_Game\Unity_Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\SGA\Desktop\Unity_Game\Unity_Game\Unity_Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.649 seconds
+- Completed reload, in  0.653 seconds
 Domain Reload Profiling:
-	ReloadAssembly (649ms)
-		BeginReloadAssembly (78ms)
+	ReloadAssembly (654ms)
+		BeginReloadAssembly (79ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (14ms)
-		EndReloadAssembly (501ms)
-			LoadAssemblies (58ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (499ms)
+			LoadAssemblies (59ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (169ms)
+			SetupTypeCache (165ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (220ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (223ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (50ms)
-				ProcessInitializeOnLoadAttributes (141ms)
+				ProcessInitializeOnLoadAttributes (144ms)
 				ProcessInitializeOnLoadMethodAttributes (13ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3048 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (113.3 KB). Loaded Objects now: 3510.
+Unloading 24 unused Assets / (113.4 KB). Loaded Objects now: 3510.
 Memory consumption went from 112.0 MB to 111.9 MB.
-Total: 2.131200 ms (FindLiveObjects: 0.204900 ms CreateObjectMapping: 0.090800 ms MarkObjects: 1.743200 ms  DeleteObjects: 0.091500 ms)
+Total: 2.033200 ms (FindLiveObjects: 0.165900 ms CreateObjectMapping: 0.078300 ms MarkObjects: 1.704700 ms  DeleteObjects: 0.083200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -167,13 +167,83 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 3707.958953 seconds.
-  path: Assets/Scenes/eScene.unity
-  artifactKey: Guid(001429550726f5449a7cc93f9ac463e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/eScene.unity using Guid(001429550726f5449a7cc93f9ac463e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d79dd039ec8d8a81fe1db6aa0ea6120') in 0.008054 seconds 
+  Time since last request: 3819.798658 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e55ccaa32d8e5c1de03c07a5412c8c3c') in 0.008308 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(6ea315d0fd7389c41b19996891e99ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(6ea315d0fd7389c41b19996891e99ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8193726cff86800c54781cdc6d54904') in 0.005409 seconds 
+  Time since last request: 10.890243 seconds.
+  path: Assets/Scenes/Scene.unity
+  artifactKey: Guid(001429550726f5449a7cc93f9ac463e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Scene.unity using Guid(001429550726f5449a7cc93f9ac463e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9c0f8e309e93bd3ec8efcb40572073d') in 0.005578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.059493 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(12040e2e8f255884da1cb923a4e78f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(12040e2e8f255884da1cb923a4e78f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c3a856480cd513f71415adbfd25ae6') in 0.006531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.639074 seconds.
+  path: Assets/Undead Survivor
+  artifactKey: Guid(89b820b244672c7478c3d4170290b9f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor using Guid(89b820b244672c7478c3d4170290b9f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa51a37c77a2fa2ab2941c1e7beaf745') in 0.005412 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.060584 seconds.
+  path: Assets/Undead Survivor/Icon.png
+  artifactKey: Guid(8cf32bb594965f3449d71aab39ee30ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Icon.png using Guid(8cf32bb594965f3449d71aab39ee30ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06e2cdbb5486c9ceadf70c0e80250274') in 0.077878 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.070194 seconds.
+  path: Assets/Undead Survivor/Sprites
+  artifactKey: Guid(6ad13e64c7d8ba24e89c0c8cd9b11716) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites using Guid(6ad13e64c7d8ba24e89c0c8cd9b11716) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfe5e8c1caebf6be92b18470ceaed686') in 0.006111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.066418 seconds.
+  path: Assets/Undead Survivor/Sprites/Enemy 0.png
+  artifactKey: Guid(1bc6097228993f045852159e71f81d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites/Enemy 0.png using Guid(1bc6097228993f045852159e71f81d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f70a3f5a6de74aacfc507714d0d33a') in 0.017594 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Undead Survivor/Sprites/Farmer 1.png
+  artifactKey: Guid(0c187a32c5bde4747be8d00770b07403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites/Farmer 1.png using Guid(0c187a32c5bde4747be8d00770b07403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34b2267d36f33dd27e2d74da9f0f2263') in 0.019991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Undead Survivor/Sprites/Farmer 3.png
+  artifactKey: Guid(57a1443e67528144aa07582927559650) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites/Farmer 3.png using Guid(57a1443e67528144aa07582927559650) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1c4fa110e06bad3481138ec3ce802c5') in 0.016935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Undead Survivor/Sprites/Enemy 3.png
+  artifactKey: Guid(d33598d781682e049a53a0a13104ef29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites/Enemy 3.png using Guid(d33598d781682e049a53a0a13104ef29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a4d99cbf2566ff39ea6b451d4372c92') in 0.016449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Undead Survivor/Sprites/UI.png
+  artifactKey: Guid(d71a3dc7aa20fad4f9a99fc76a9254ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites/UI.png using Guid(d71a3dc7aa20fad4f9a99fc76a9254ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e17ba47d97a425a11291b7ccdb36f9a') in 0.029783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Undead Survivor/Sprites/Enemy 4.png
+  artifactKey: Guid(c4d2ccab0c2ad7e47853b6e31a7ac7c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites/Enemy 4.png using Guid(c4d2ccab0c2ad7e47853b6e31a7ac7c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c10fab097224fae32ce78d913fa9fb20') in 0.014009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Undead Survivor/Sprites/Farmer 2.png
+  artifactKey: Guid(8f7a60065e3984c489b9c4d41bc3dc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Undead Survivor/Sprites/Farmer 2.png using Guid(8f7a60065e3984c489b9c4d41bc3dc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4db0a7dd0fb2d49c1aace6d0674735ba') in 0.019860 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
