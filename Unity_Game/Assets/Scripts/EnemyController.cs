@@ -48,5 +48,8 @@ public class EnemyController : MonoBehaviour
         // ** Enemy가 바라보는 위치에 따라 이미지 반전
         spriter.flipX = target.position.x < rigid.position.x;
     }
-
+    void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+    }
 }

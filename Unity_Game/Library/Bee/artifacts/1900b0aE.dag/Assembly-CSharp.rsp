@@ -357,7 +357,9 @@
 "Assets/Scripts/EnemyController.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/PoolManager.cs"
 "Assets/Scripts/Reposition.cs"
+"Assets/Scripts/Spawner.cs"
 -langversion:9.0
 
 /deterministic
