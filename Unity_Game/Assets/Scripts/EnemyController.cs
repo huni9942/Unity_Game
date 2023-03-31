@@ -25,27 +25,40 @@ public class EnemyController : MonoBehaviour
     // ** Enemy의 Rigidbody2D를 받아올 변수
     Rigidbody2D rigid;
 
+    // ** Enemy의 Collider2D를 받아올 변수
+    Collider2D coll;
+
     // ** Enemy의 Animator를 받아올 변수
     Animator anim;
 
     // ** Enemy의 SpriteRenderer를 받아올 변수
     SpriteRenderer spriter;
 
+    // ** 딜레이 시간
+    WaitForFixedUpdate wait;
+
     void Awake()
     {
         // ** Enemy의 Rigidbody2D를 받아옴
         rigid = GetComponent<Rigidbody2D>();
+
+        // ** Enemy의 Collider2D를 받아옴
+        coll = GetComponent<Collider2D>();
 
         // ** Enemy의 Animator를 받아옴
         anim = GetComponent<Animator>();
 
         // ** Enemy의 SpriteRenderer를 받아옴
         spriter = GetComponent<SpriteRenderer>();
+
+        // ** 딜레이 시간 생성
+        wait = new WaitForFixedUpdate();
     }
 
     void FixedUpdate()
     {
-        if (!isLive)
+        // ** 사망하거나 Hit 애니메이션 상황일 때
+        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
         // ** target의 위치를 추적하여 이동
@@ -67,9 +80,11 @@ public class EnemyController : MonoBehaviour
     {
         // ** 추적할 target 설정
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-        
-        // ** 생존 여부 및 최대 체력 초기화
         isLive = true;
+        coll.enabled = true;
+        rigid.simulated = true;
+        spriter.sortingOrder = 2;
+        anim.SetBool("Dead", false);
         health = maxHealth;
     }
 
@@ -89,17 +104,34 @@ public class EnemyController : MonoBehaviour
 
         // ** Bullet과 충돌 시, 대미지만큼 체력 감소
         health -= collision.GetComponent<BulletController>().damage;
+        StartCoroutine(KnockBack());
 
         // ** 생존 시, 피격 처리
         if (health > 0)
         {
+            // ** Hit 애니메이션 출력
             anim.SetTrigger("Hit");
         }
         // ** 사망 시
         else
         {
-            Dead();
+            isLive = false;
+            coll.enabled = false;
+            rigid.simulated = false;
+            spriter.sortingOrder = 1;
+            anim.SetBool("Dead", true);
         }
+    }
+
+    IEnumerator KnockBack()
+    {
+        yield return wait;
+        // ** 플레이어 위치
+        Vector3 playerPos = GameManager.instance.player.transform.position;
+        // ** 플레이어 기준 반대 방향
+        Vector3 dirVec = transform.position - playerPos;
+        // ** 순간적으로 힘을 가함
+        rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
     }
 
     void Dead()
