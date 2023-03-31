@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     {
         // ** Enemy의 소환 간격 및 레벨
         timer += Time.deltaTime;
-        level = Mathf.Min(Mathf.FloorToInt(GameManager.instance.gameTime / 10.0f), spawnData.Length -1);
+        level = Mathf.Min(Mathf.FloorToInt(GameManager.instance.gameTime / 10.0f), spawnData.Length - 1);
 
         if (timer > spawnData[level].spawnTime)
         {

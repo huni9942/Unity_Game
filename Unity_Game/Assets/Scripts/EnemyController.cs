@@ -82,4 +82,29 @@ public class EnemyController : MonoBehaviour
         health = data.health;
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Bullet"))
+            return;
+
+        // ** Bullet과 충돌 시, 대미지만큼 체력 감소
+        health -= collision.GetComponent<BulletController>().damage;
+
+        // ** 생존 시, 피격 처리
+        if (health > 0)
+        {
+
+        }
+        // ** 사망 시
+        else
+        {
+            Dead();
+        }
+    }
+
+    void Dead()
+    {
+        gameObject.SetActive(false);
+    }
+
 }
