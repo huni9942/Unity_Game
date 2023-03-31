@@ -7,14 +7,26 @@ public class EnemyController : MonoBehaviour
     // ** Enemy의 속도
     public float speed;
 
+    // ** Enemy의 체력
+    public float health;
+
+    // ** Enemy의최대 체력
+    public float maxHealth;
+
+    // ** Enemy의 애니메이션 컨트롤러
+    public RuntimeAnimatorController[] animCon;
+
     // ** Enemy가 추적할 타겟
     public Rigidbody2D target;
 
     // ** Enemy의 생존 여부
-    bool isLive = true;
+    bool isLive;
 
     // ** Enemy의 Rigidbody2D를 받아올 변수
     Rigidbody2D rigid;
+
+    // ** Enemy의 Animator를 받아올 변수
+    Animator anim;
 
     // ** Enemy의 SpriteRenderer를 받아올 변수
     SpriteRenderer spriter;
@@ -23,6 +35,9 @@ public class EnemyController : MonoBehaviour
     {
         // ** Enemy의 Rigidbody2D를 받아옴
         rigid = GetComponent<Rigidbody2D>();
+
+        // ** Enemy의 Animator를 받아옴
+        anim = GetComponent<Animator>();
 
         // ** Enemy의 SpriteRenderer를 받아옴
         spriter = GetComponent<SpriteRenderer>();
@@ -50,6 +65,21 @@ public class EnemyController : MonoBehaviour
     }
     void OnEnable()
     {
+        // ** 추적할 target 설정
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        
+        // ** 생존 여부 및 최대 체력 초기화
+        isLive = true;
+        health = maxHealth;
     }
+
+    public void Init(SpawnData data)
+    {
+        // ** Enemy의 정보를 Spawner 스크립트에서 받아옴
+        anim.runtimeAnimatorController = animCon[data.spriteType];
+        speed = data.speed;
+        maxHealth = data.health;
+        health = data.health;
+    }
+
 }
