@@ -93,7 +93,7 @@ public class EnemyController : MonoBehaviour
         // ** 생존 시, 피격 처리
         if (health > 0)
         {
-
+            anim.SetTrigger("Hit");
         }
         // ** 사망 시
         else

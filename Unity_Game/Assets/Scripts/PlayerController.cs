@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     // ** 움직이는 속도
     public float speed;
 
+    // ** Scanner 클래스 타입 변수
+    public Scanner scanner;
+
     // ** 플레이어의 Rigidbody2D를 받아올 변수
     Rigidbody2D rigid;
 
@@ -29,6 +32,9 @@ public class PlayerController : MonoBehaviour
 
         // ** 플레이어의 Animator를 받아옴
         anim = GetComponent<Animator>();
+
+        // ** Scanner 클래스를 받아옴
+        scanner = GetComponent<Scanner>();
     }
 
     void Update()

@@ -360,6 +360,7 @@
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PoolManager.cs"
 "Assets/Scripts/Reposition.cs"
+"Assets/Scripts/Scanner.cs"
 "Assets/Scripts/Spawner.cs"
 "Assets/Scripts/WeaponController.cs"
 -langversion:9.0
