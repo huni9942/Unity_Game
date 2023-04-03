@@ -22,18 +22,12 @@ public class WeaponController : MonoBehaviour
     // ** 무기 쿨타임
     float timer;
 
-    // ** 플레이어컨트롤러 클래스 변수
+    // ** 플레이어
     PlayerController player;
 
     void Awake()
     {
-        // ** 부모의 플레이어컨트롤러 컴포넌트를 받아옴
-        player = GetComponentInParent<PlayerController>();
-    }
-
-    void Start()
-    {
-        Init();
+        player = GameManager.instance.player;
     }
 
     void Update()
@@ -70,10 +64,31 @@ public class WeaponController : MonoBehaviour
 
         if (id == 0)
             Batch();
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
-    public void Init()
+    public void Init(ItemData data)
     {
+        // ** 기본 세팅
+        name = "Weapon " + data.itemId;
+        transform.parent = player.transform;
+        transform.localPosition = Vector3.zero;
+
+        // ** 속성 세팅
+        id = data.itemId;
+        damage = data.baseDamage;
+        count = data.baseCount;
+
+        for (int index = 0; index < GameManager.instance.pool.prefabs.Length; index++)
+        {
+            if (data.projectile == GameManager.instance.pool.prefabs[index])
+            {
+                prefabId = index;
+                break;
+            }
+        }
+
         switch (id)
         {
             case 0:
@@ -86,6 +101,8 @@ public class WeaponController : MonoBehaviour
                 speed = 0.3f;
                 break;
         }
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     void Batch()
