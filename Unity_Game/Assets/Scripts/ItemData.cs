@@ -19,6 +19,7 @@ public class ItemData : ScriptableObject
     // ** 아이템 이름
     public string itemName;
 
+    [TextArea]
     // ** 아이템 설명
     public string itemDesc;
 

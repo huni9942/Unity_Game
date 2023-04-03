@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // ** 정지 시
+        if (!GameManager.instance.isLive)
+            return;
+
         // ** Input.GetAxisRaw = -1 ~ 1 사이의 값을 반환
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
@@ -43,6 +47,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // ** 정지 시
+        if (!GameManager.instance.isLive)
+            return;
+
         // ** 입력받은 값으로 플레이어 이동
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
@@ -50,10 +58,33 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
+        // ** 정지 시
+        if (!GameManager.instance.isLive)
+            return;
+
         // ** 플레이어가 바라보는 방향에 따라 이미지 반전
         if (inputVec.x != 0)
         {
             spriter.flipX = inputVec.x < 0;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // ** 사망한 상태일 경우
+        if (!GameManager.instance.isLive)
+            return;
+
+        // ** 피격 시
+        GameManager.instance.health -= Time.deltaTime * 10;
+
+        if (GameManager.instance.health < 0)
+        {
+            for (int index=2; index < transform.childCount; index++)
+            {
+                transform.GetChild(index).gameObject.SetActive(false);
+            }
+            anim.SetTrigger("Dead");
         }
     }
 

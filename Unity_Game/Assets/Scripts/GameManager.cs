@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("# Game Control")]
+    // ** 시간 정지 여부
+    public bool isLive;
 
     // ** 게임 시간
     public float gameTime;
@@ -17,10 +19,10 @@ public class GameManager : MonoBehaviour
     [Header("# Player Info")]
 
     // ** 체력
-    public int health;
+    public float health;
 
     // ** 최대 체력
-    public int maxHealth = 100;
+    public float maxHealth = 100.0f;
 
     // ** 레벨
     public int level;
@@ -42,18 +44,29 @@ public class GameManager : MonoBehaviour
     // ** 플레이어
     public PlayerController player;
 
+    // ** 레벨업 ui
+    public LevelUpController uiLevelUp;
+
     void Awake()
     {
         instance = this;
     }
 
-    void Start()
+    public void GameStart()
     {
         health = maxHealth;
+
+        // ** 임시 **
+        uiLevelUp.Select(0);
+        isLive = true;
     }
 
     void Update()
     {
+        // ** 정지 시
+        if (!isLive)
+            return;
+
         // ** 게임 시간 설정
         gameTime += Time.deltaTime;
 
@@ -67,10 +80,26 @@ public class GameManager : MonoBehaviour
     {
         exp++;
 
-        if (exp == nextExp[level])
+        // ** 레벨 업 시
+        if (exp == nextExp[Mathf.Min(level, nextExp.Length-1)])
         {
             level++;
             exp = 0;
+            uiLevelUp.Show();
         }
+    }
+
+    public void Stop()
+    {
+        // ** 정지
+        isLive = false;
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        // ** 재시작
+        isLive = true;
+        Time.timeScale = 1;
     }
 }

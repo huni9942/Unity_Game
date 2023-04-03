@@ -23,23 +23,50 @@ public class ItemController : MonoBehaviour
     // ** 레벨 텍스트
     Text textLevel;
 
+    // ** 이름 텍스트
+    Text textName;
+
+    // ** 설명 텍스트
+    Text textDesc;
+
     void Awake()
     {
         // ** 아이콘 스프라이트 불러오기
         icon = GetComponentsInChildren<Image>()[1];
         icon.sprite = data.itemIcon;
 
-        // ** 레벨 텍스트 불러오기
+        // ** 텍스트 불러오기
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
+        textName = texts[1];
+        textDesc = texts[2];
+        textName.text = data.itemName;
     }
 
-    void LateUpdate()
+    void OnEnable()
     {
-        // ** 레벨 텍스트 설정
+        // ** 텍스트 변경
+        // ** 레벨 텍스트
         textLevel.text = "Lv." + (level + 1);
-    }
 
+        // ** 아이템 버튼 클릭 시 시행
+        switch (data.itemType)
+        {
+            // ** 무기의 경우
+            case ItemData.ItemType.Melee:
+            case ItemData.ItemType.Range:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
+                break;
+            // ** 그 외 장비의 경우
+            case ItemData.ItemType.Glove:
+            case ItemData.ItemType.Shoe:
+                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100);
+                break;
+            default:
+                textDesc.text = string.Format(data.itemDesc);
+                break;
+        }
+    }
     public void OnClick()
     {
         // ** 아이템 버튼 클릭 시 시행

@@ -364,6 +364,7 @@
 "Assets/Scripts/HUD.cs"
 "Assets/Scripts/ItemController.cs"
 "Assets/Scripts/ItemData.cs"
+"Assets/Scripts/LevelUpController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PoolManager.cs"
 "Assets/Scripts/Reposition.cs"

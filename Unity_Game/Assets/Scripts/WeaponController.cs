@@ -32,6 +32,10 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
+        // ** 정지 시
+        if (!GameManager.instance.isLive)
+            return;
+
         switch (id)
         {
             // ** 근접 무기의 경우

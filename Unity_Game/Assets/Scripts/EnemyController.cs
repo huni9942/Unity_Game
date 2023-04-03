@@ -57,6 +57,10 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // ** 정지 시
+        if (!GameManager.instance.isLive)
+            return;
+
         // ** 사망하거나 Hit 애니메이션 상황일 때
         if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
@@ -70,6 +74,10 @@ public class EnemyController : MonoBehaviour
 
     void LateUpdate()
     {
+        // ** 정지 시
+        if (!GameManager.instance.isLive)
+            return;
+
         if (!isLive)
             return;
 
