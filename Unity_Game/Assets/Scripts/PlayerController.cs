@@ -4,37 +4,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // ** 움직임을 저장할 벡터
+    // ** 움직일 벡터
     public Vector2 inputVec;
 
-    // ** 움직이는 속도
+    // ** 이동 속도
     public float speed;
 
-    // ** Scanner 클래스 타입 변수
+    // ** 탐지
     public Scanner scanner;
 
-    // ** 플레이어의 Rigidbody2D를 받아올 변수
+    // ** 손
+    public HandController[] hands;
+
+    // ** 플레이어의 Rigidbody2D
     Rigidbody2D rigid;
 
-    // ** 플레이어의 SpriteRenderer를 받아올 변수
+    // ** 플레이어의 SpriteRenderer
     SpriteRenderer spriter;
 
-    // ** 플레이어의 Animator를 받아올 변수
+    // ** 플레이어의 Animator
     Animator anim;
 
     void Awake()
     {
-        // ** 플레이어의 Rigidbody2D를 받아옴
         rigid = GetComponent<Rigidbody2D>();
-
-        // ** 플레이어의 SpriteRenderer를 받아옴
         spriter = GetComponent<SpriteRenderer>();
-
-        // ** 플레이어의 Animator를 받아옴
         anim = GetComponent<Animator>();
-
-        // ** Scanner 클래스를 받아옴
         scanner = GetComponent<Scanner>();
+        hands = GetComponentsInChildren<HandController>(true);
     }
 
     void Update()

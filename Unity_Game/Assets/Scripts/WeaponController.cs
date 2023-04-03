@@ -19,7 +19,7 @@ public class WeaponController : MonoBehaviour
     // ** 무기 속도
     public float speed;
 
-    // ** 무기 쿨타임
+    // ** 시간
     float timer;
 
     // ** 플레이어
@@ -32,36 +32,36 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        // ** id에 따라 무기 공격 방식 변경
         switch (id)
         {
+            // ** 근접 무기의 경우
             case 0:
                 // ** 무기 회전
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
                 break;
+            // ** 원거리 무기의 경우
             default:
                 timer += Time.deltaTime;
-
+                // ** 연사 속도에 따라 총알 발사
                 if (timer > speed)
                 {
+                    // ** 시간 초기화 및 발사
                     timer = 0.0f;
                     Fire();
                 }
 
                 break;
         }
-        if (Input.GetButtonDown("Jump"))
-        {
-            LevelUp(10, 1);
-        }
 
     }
 
     public void LevelUp(float damage, int count)
     {
+        // ** 레벨 업 시 대미지와 개수 증가
         this.damage = damage;
         this.count += count;
 
+        // ** 근접 무기일 때
         if (id == 0)
             Batch();
 
@@ -101,6 +101,11 @@ public class WeaponController : MonoBehaviour
                 speed = 0.3f;
                 break;
         }
+
+        // ** 손 세팅
+        HandController hand = player.hands[(int)data.itemType];
+        hand.spriter.sprite = data.hand;
+        hand.gameObject.SetActive(true);
 
         player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }

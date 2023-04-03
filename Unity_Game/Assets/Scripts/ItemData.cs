@@ -40,5 +40,9 @@ public class ItemData : ScriptableObject
     public int[] counts;
 
     [Header("# Weapon")]
+    // ** 발사체
     public GameObject projectile;
+
+    // ** 손
+    public Sprite hand;
 }
