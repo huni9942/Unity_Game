@@ -62,7 +62,7 @@ public class WeaponController : MonoBehaviour
     public void LevelUp(float damage, int count)
     {
         // ** 레벨 업 시 대미지와 개수 증가
-        this.damage = damage;
+        this.damage = damage * CharacterController.Damage;
         this.count += count;
 
         // ** 근접 무기일 때
@@ -81,8 +81,8 @@ public class WeaponController : MonoBehaviour
 
         // ** 속성 세팅
         id = data.itemId;
-        damage = data.baseDamage;
-        count = data.baseCount;
+        damage = data.baseDamage * CharacterController.Damage;
+        count = data.baseCount + CharacterController.Count;
 
         for (int index = 0; index < GameManager.instance.pool.prefabs.Length; index++)
         {
@@ -97,12 +97,12 @@ public class WeaponController : MonoBehaviour
         {
             case 0:
                 // ** 회전 속도
-                speed = 150;
+                speed = 150 * CharacterController.WeaponSpeed;
                 Batch();
                 break;
             default:
                 // ** 연사 속도
-                speed = 0.3f;
+                speed = 0.5f * CharacterController.WeaponRate;
                 break;
         }
 

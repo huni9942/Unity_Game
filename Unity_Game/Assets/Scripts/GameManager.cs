@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     public float maxgameTime = 2 * 10.0f;
 
     [Header("# Player Info")]
+
+    // ** 캐릭터 id
+    public int playerId;
 
     // ** 체력
     public float health;
@@ -47,18 +51,70 @@ public class GameManager : MonoBehaviour
     // ** 레벨업 ui
     public LevelUpController uiLevelUp;
 
+    // ** 게임 결과 ui
+    public Result uiResult;
+
+    // ** 몬스터 클리너
+    public GameObject enemyCleaner;
+
+
     void Awake()
     {
         instance = this;
     }
 
-    public void GameStart()
+    public void GameStart(int id)
     {
+        playerId = id;
         health = maxHealth;
 
         // ** 임시 **
-        uiLevelUp.Select(0);
-        isLive = true;
+        player.gameObject.SetActive(true);
+        uiLevelUp.Select(playerId % 2);
+        Resume();
+    }
+
+    public void GameOver()
+    {
+        // ** 게임 오버 시
+        StartCoroutine(GameOverRoutine());
+    }
+
+    IEnumerator GameOverRoutine()
+    {
+        // ** 게임 오버 시 반복
+        isLive = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        uiResult.gameObject.SetActive(true);
+        uiResult.Lose();
+        Stop();
+    }
+
+    public void GameVictory()
+    {
+        // ** 게임 오버 시
+        StartCoroutine(GameVictoryRoutine());
+    }
+
+    IEnumerator GameVictoryRoutine()
+    {
+        // ** 게임 오버 시 반복
+        isLive = false;
+        enemyCleaner.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        uiResult.gameObject.SetActive(true);
+        uiResult.Win();
+        Stop();
+    }
+
+    public void GameRetry()
+    {
+        // ** 재시작 시
+        SceneManager.LoadScene(0);
     }
 
     void Update()
@@ -73,11 +129,15 @@ public class GameManager : MonoBehaviour
         if (gameTime > maxgameTime)
         {
             gameTime = maxgameTime;
+            GameVictory();
         }
     }
 
     public void GetExp()
     {
+        if (!isLive)
+            return;
+
         exp++;
 
         // ** 레벨 업 시

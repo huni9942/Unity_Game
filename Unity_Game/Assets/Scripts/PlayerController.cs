@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     // ** 손
     public HandController[] hands;
 
+    // ** 애니메이터 컨트롤러
+    public RuntimeAnimatorController[] animCon;
+
     // ** 플레이어의 Rigidbody2D
     Rigidbody2D rigid;
 
@@ -32,6 +35,15 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
         hands = GetComponentsInChildren<HandController>(true);
+    }
+
+    private void OnEnable()
+    {
+        // ** 캐릭터에 따라 이동속도 변경
+        speed *= CharacterController.Speed;
+
+        // ** 캐릭터에 따라 애니메이션 변경
+        anim.runtimeAnimatorController = animCon[GameManager.instance.playerId];
     }
 
     void Update()
@@ -78,6 +90,7 @@ public class PlayerController : MonoBehaviour
         // ** 피격 시
         GameManager.instance.health -= Time.deltaTime * 10;
 
+        // ** 사망 시
         if (GameManager.instance.health < 0)
         {
             for (int index=2; index < transform.childCount; index++)
@@ -85,6 +98,7 @@ public class PlayerController : MonoBehaviour
                 transform.GetChild(index).gameObject.SetActive(false);
             }
             anim.SetTrigger("Dead");
+            GameManager.instance.GameOver();
         }
     }
 
