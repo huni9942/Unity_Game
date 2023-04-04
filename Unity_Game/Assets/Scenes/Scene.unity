@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.17443931, g: 0.33214137, b: 0.754717, a: 0.5}
+  m_EffectColor: {r: 0.1764706, g: 0.33214137, b: 0.74509805, a: 0.5}
   m_EffectDistance: {x: 0.4, y: -0.4}
   m_UseGraphicAlpha: 1
 --- !u!114 &104748995
@@ -1551,7 +1551,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.185185
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1881,7 +1881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.46925062, b: 0.7100837, a: 1}
+  m_Color: {r: 0.5141927, g: 0.8980392, b: 0.47058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2141,20 +2141,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 653002973}
     m_ColliderPaths:
-    - - X: 100000000
-        Y: 100000000
-      - X: -100000000
-        Y: 100000000
-      - X: -100000000
-        Y: -100000000
-      - X: 100000000
-        Y: -100000000
+    - - X: 100000040
+        Y: 100000096
+      - X: -100000040
+        Y: 100000096
+      - X: -100000096
+        Y: 100000040
+      - X: -100000096
+        Y: -100000040
+      - X: -100000040
+        Y: -100000096
+      - X: 100000040
+        Y: -100000096
+      - X: 100000096
+        Y: -100000040
+      - X: 100000096
+        Y: 100000040
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10}
-      - {x: 9.99997, y: 10}
-      - {x: -10, y: 9.99997}
-      - {x: -9.99997, y: -10}
+    - - {x: 9.999974, y: -10.00001}
+      - {x: 9.999974, y: 10.00001}
+      - {x: -10.00001, y: 9.999974}
+      - {x: -9.999974, y: -10.00001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &653002972
@@ -2193,7 +2201,7 @@ TilemapCollider2D:
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &653002974
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -6466,7 +6474,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1984569153}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 8.185185
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -6625,7 +6633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBCBC\uB18D\uBD80"
+  m_Text: "\uC791\uC5C5\uBCD1"
 --- !u!222 &701389786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6646,7 +6654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.17443931, g: 0.33214137, b: 0.754717, a: 0.5}
+  m_EffectColor: {r: 0.1764706, g: 0.33333334, b: 0.74509805, a: 0.5}
   m_EffectDistance: {x: 0.4, y: -0.4}
   m_UseGraphicAlpha: 1
 --- !u!1 &704497341
@@ -7147,7 +7155,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: 18, y: 20}
+  m_SizeDelta: {x: 15, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889537929
 MonoBehaviour:
@@ -7169,7 +7177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1378562880, guid: 99a24620d31e5ce4e823c32d11e17c2c, type: 3}
+  m_Sprite: {fileID: 2305144062599850415, guid: 220d39c4bfd8a5f43897c04e5a02c406, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7814,7 +7822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.8773585, g: 0.1779548, b: 0.5499532, a: 0.5}
+  m_EffectColor: {r: 0.1764706, g: 0.37254903, b: 0.21568628, a: 0.5}
   m_EffectDistance: {x: 0.4, y: -0.4}
   m_UseGraphicAlpha: 1
 --- !u!114 &1101452252
@@ -7989,7 +7997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132730584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0.35, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8131,20 +8139,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1136973210}
     m_ColliderPaths:
-    - - X: 100000000
-        Y: 100000000
-      - X: -100000000
-        Y: 100000000
-      - X: -100000000
-        Y: -100000000
-      - X: 100000000
-        Y: -100000000
+    - - X: 100000040
+        Y: 100000096
+      - X: -100000040
+        Y: 100000096
+      - X: -100000096
+        Y: 100000040
+      - X: -100000096
+        Y: -100000040
+      - X: -100000040
+        Y: -100000096
+      - X: 100000040
+        Y: -100000096
+      - X: 100000096
+        Y: -100000040
+      - X: 100000096
+        Y: 100000040
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10}
-      - {x: 9.99997, y: 10}
-      - {x: -10, y: 9.99997}
-      - {x: -9.99997, y: -10}
+    - - {x: 9.999974, y: -10.00001}
+      - {x: 9.999974, y: 10.00001}
+      - {x: -10.00001, y: 9.999974}
+      - {x: -9.999974, y: -10.00001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1136973209
@@ -8183,7 +8199,7 @@ TilemapCollider2D:
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1136973211
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -12735,7 +12751,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: 18, y: 20}
+  m_SizeDelta: {x: 15, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344535736
 MonoBehaviour:
@@ -12757,7 +12773,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -150523396, guid: 0c187a32c5bde4747be8d00770b07403, type: 3}
+  m_Sprite: {fileID: 309628545801974608, guid: 564fedabfe62bd5439a41debe47e7d9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13612,7 +13628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.8773585, g: 0.1779548, b: 0.5499532, a: 0.5}
+  m_EffectColor: {r: 0.1764706, g: 0.37254903, b: 0.21568628, a: 0.5}
   m_EffectDistance: {x: 0.4, y: -0.4}
   m_UseGraphicAlpha: 1
 --- !u!114 &1570874202
@@ -13648,7 +13664,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBCF4\uB9AC\uB18D\uBD80"
+  m_Text: "\uC18C\uCD1D\uBCD1"
 --- !u!222 &1570874203
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13921,68 +13937,32 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1661388766}
     m_ColliderPaths:
-    - - X: 52999992
-        Y: 100000000
-      - X: -52999992
-        Y: 100000000
-      - X: -52999992
-        Y: -100000000
-      - X: 52999992
-        Y: -100000000
-    - - X: 95399992
-        Y: 100000000
-      - X: 74200000
-        Y: 100000000
-      - X: 74200000
-        Y: -100000000
-      - X: 95399992
-        Y: -100000000
-    - - X: 74199992
-        Y: 100000000
-      - X: 53000000
-        Y: 100000000
-      - X: 53000000
-        Y: -100000000
-      - X: 74199992
-        Y: -100000000
-    - - X: 105999992
-        Y: 100000000
-      - X: 95400000
-        Y: 100000000
-      - X: 95400000
-        Y: -100000000
-      - X: 105999992
-        Y: -100000000
-    - - X: -95400000
-        Y: 100000000
-      - X: -105999992
-        Y: 100000000
-      - X: -105999992
-        Y: -100000000
-      - X: -95400000
-        Y: -100000000
-    - - X: -74200000
-        Y: 100000000
-      - X: -95399992
-        Y: 100000000
-      - X: -95399992
-        Y: -100000000
-      - X: -74200000
-        Y: -100000000
-    - - X: -53000000
-        Y: 100000000
-      - X: -74199992
-        Y: 100000000
-      - X: -74199992
-        Y: -100000000
-      - X: -53000000
-        Y: -100000000
+    - - X: 100248528
+        Y: 100600008
+      - X: -100248528
+        Y: 100600008
+      - X: -100600008
+        Y: 100248528
+      - X: -100600008
+        Y: -100248528
+      - X: -100248528
+        Y: -100600008
+      - X: 100248528
+        Y: -100600008
+      - X: 100600008
+        Y: -100248528
+      - X: 100600008
+        Y: 100248528
   m_CompositePaths:
     m_Paths:
-    - - {x: 10.59997, y: -10}
-      - {x: 10.59997, y: 10}
-      - {x: -10.599999, y: 9.99997}
-      - {x: -10.59997, y: -10}
+    - - {x: 10.024841, y: -10.060001}
+      - {x: 10.060001, y: -10.024841}
+      - {x: 10.059994, y: 10.024861}
+      - {x: 10.024841, y: 10.060001}
+      - {x: -10.024861, y: 10.059994}
+      - {x: -10.060001, y: 10.024841}
+      - {x: -10.059994, y: -10.024861}
+      - {x: -10.024841, y: -10.060001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1661388765
@@ -14021,7 +14001,7 @@ TilemapCollider2D:
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1661388767
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -18317,7 +18297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686525664}
   m_LocalRotation: {x: 0, y: 0, z: -0.30070576, w: 0.953717}
-  m_LocalPosition: {x: -0.17, y: -0.38, z: 0}
+  m_LocalPosition: {x: -0.28, y: 0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19222,20 +19202,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1958495331}
     m_ColliderPaths:
-    - - X: 100000000
-        Y: 100000000
-      - X: -100000000
-        Y: 100000000
-      - X: -100000000
-        Y: -100000000
-      - X: 100000000
-        Y: -100000000
+    - - X: 100000040
+        Y: 100000096
+      - X: -100000040
+        Y: 100000096
+      - X: -100000096
+        Y: 100000040
+      - X: -100000096
+        Y: -100000040
+      - X: -100000040
+        Y: -100000096
+      - X: 100000040
+        Y: -100000096
+      - X: 100000096
+        Y: -100000040
+      - X: 100000096
+        Y: 100000040
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10}
-      - {x: 9.99997, y: 10}
-      - {x: -10, y: 9.99997}
-      - {x: -9.99997, y: -10}
+    - - {x: 9.999974, y: -10.00001}
+      - {x: 9.999974, y: 10.00001}
+      - {x: -10.00001, y: 9.999974}
+      - {x: -9.999974, y: -10.00001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1958495330
@@ -19274,7 +19262,7 @@ TilemapCollider2D:
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
+  m_ExtrusionFactor: 0.00001
 --- !u!483693784 &1958495332
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -23409,8 +23397,8 @@ GameObject:
   - component: {fileID: 1984569151}
   - component: {fileID: 1984569150}
   - component: {fileID: 1984569154}
-  - component: {fileID: 1984569155}
   - component: {fileID: 1984569156}
+  - component: {fileID: 1984569157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -23431,8 +23419,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.9}
+  m_Offset: {x: -0.11, y: 0.9}
+  m_Size: {x: 0.96, y: 1.96}
   m_Direction: 0
 --- !u!50 &1984569151
 Rigidbody2D:
@@ -23496,12 +23484,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1378562880, guid: 99a24620d31e5ce4e823c32d11e17c2c, type: 3}
+  m_Sprite: {fileID: 2305144062599850415, guid: 220d39c4bfd8a5f43897c04e5a02c406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1.1111112}
+  m_Size: {x: 1.3, y: 1.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -23517,7 +23505,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2067840941}
   - {fileID: 1861011689}
@@ -23546,7 +23534,24 @@ MonoBehaviour:
   animCon:
   - {fileID: 9100000, guid: 4a46012c9d8a10544861b4f1a76559d6, type: 2}
   - {fileID: 22100000, guid: 58315ae43e862674d82fba25e1fe4ab3, type: 2}
---- !u!95 &1984569155
+--- !u!114 &1984569156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984569149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4ad51b176b45e4da194d8d2ef6f1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanRange: 7
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  nearestTarget: {fileID: 0}
+--- !u!95 &1984569157
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -23567,23 +23572,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1984569156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984569149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4ad51b176b45e4da194d8d2ef6f1ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scanRange: 7
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  nearestTarget: {fileID: 0}
 --- !u!1 &2001958835
 GameObject:
   m_ObjectHideFlags: 0
@@ -23851,7 +23839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -12}
+  m_AnchoredPosition: {x: 0, y: -4}
   m_SizeDelta: {x: 0, y: 4}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2050024899
@@ -23943,9 +23931,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067840940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.45, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.06, y: 0, z: 0}
+  m_LocalScale: {x: 1.37, y: 1.37, z: 1.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1984569153}
   m_RootOrder: 0

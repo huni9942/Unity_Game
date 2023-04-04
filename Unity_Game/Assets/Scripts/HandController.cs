@@ -12,8 +12,8 @@ public class HandController : MonoBehaviour
     SpriteRenderer player;
 
     // ** 오른손 위치
-    Vector3 rightPos = new Vector3(0.35f, -0.15f, 0);
-    Vector3 rightPosReverse = new Vector3(-0.15f, -0.15f, 0);
+    Vector3 rightPos = new Vector3(0.35f, 0.5f, 0);
+    Vector3 rightPosReverse = new Vector3(-0.15f, 0.5f, 0);
 
     // ** 왼손 회전
     Quaternion leftRot = Quaternion.Euler(0, 0, -35);

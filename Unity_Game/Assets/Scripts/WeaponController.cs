@@ -142,7 +142,7 @@ public class WeaponController : MonoBehaviour
             Vector3 rotVec = Vector3.forward * 360 * index / count;
             // ** 무기 회전 및 이동
             bullet.Rotate(rotVec);
-            bullet.Translate(bullet.up * 1.5f, Space.World);
+            bullet.Translate(bullet.up * 3.0f, Space.World);
 
             // ** 대미지, 관통 횟수 함수 호출(-1은 무한 관통)
             bullet.GetComponent<BulletController>().Init(damage, -1, Vector3.zero);
