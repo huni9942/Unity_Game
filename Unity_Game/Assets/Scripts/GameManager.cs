@@ -57,9 +57,21 @@ public class GameManager : MonoBehaviour
     // ** 몬스터 클리너
     public GameObject enemyCleaner;
 
+    // ** 효과음 소스 배열
+    public AudioSource[] sfxPlayer;
+
+    // ** 효과음을 저장할 배열
+    public AudioClip[] sfxClip;
+    
+    public enum Sfx { Select, LevelUp, Hit0, Hit1, Dead, Lose, Win, Melee0, Melee1, Range};
+
+    // ** 재생할 효과음
+    int sfxCursor;
+
 
     void Awake()
     {
+        Screen.SetResolution(900, 900,false);
         instance = this;
     }
 
@@ -68,10 +80,11 @@ public class GameManager : MonoBehaviour
         playerId = id;
         health = maxHealth;
 
-        // ** 임시 **
         player.gameObject.SetActive(true);
         uiLevelUp.Select(playerId % 2);
         Resume();
+
+        SfxPlay(Sfx.Select);
     }
 
     public void GameOver()
@@ -90,6 +103,8 @@ public class GameManager : MonoBehaviour
         uiResult.gameObject.SetActive(true);
         uiResult.Lose();
         Stop();
+
+        SfxPlay(Sfx.Lose);
     }
 
     public void GameVictory()
@@ -109,6 +124,8 @@ public class GameManager : MonoBehaviour
         uiResult.gameObject.SetActive(true);
         uiResult.Win();
         Stop();
+
+        SfxPlay(Sfx.Win);
     }
 
     public void GameRetry()
@@ -146,6 +163,8 @@ public class GameManager : MonoBehaviour
             level++;
             exp = 0;
             uiLevelUp.Show();
+
+            SfxPlay(Sfx.LevelUp);
         }
     }
 
@@ -162,4 +181,45 @@ public class GameManager : MonoBehaviour
         isLive = true;
         Time.timeScale = 1;
     }
+
+    public void SfxPlay(Sfx type)
+    {
+        switch (type)
+        {
+            case Sfx.Dead:
+                sfxPlayer[sfxCursor].clip = sfxClip[0];
+                break;
+            case Sfx.Hit0:
+                sfxPlayer[sfxCursor].clip = sfxClip[1];
+                break;
+            case Sfx.Hit1:
+                sfxPlayer[sfxCursor].clip = sfxClip[2];
+                break;
+            case Sfx.LevelUp:
+                sfxPlayer[sfxCursor].clip = sfxClip[3];
+                break;
+            case Sfx.Lose:
+                sfxPlayer[sfxCursor].clip = sfxClip[4];
+                break;
+            case Sfx.Melee0:
+                sfxPlayer[sfxCursor].clip = sfxClip[5];
+                break;
+            case Sfx.Melee1:
+                sfxPlayer[sfxCursor].clip = sfxClip[6];
+                break;
+            case Sfx.Range:
+                sfxPlayer[sfxCursor].clip = sfxClip[7];
+                break;
+            case Sfx.Select:
+                sfxPlayer[sfxCursor].clip = sfxClip[8];
+                break;
+            case Sfx.Win:
+                sfxPlayer[sfxCursor].clip = sfxClip[9];
+                break;
+        }
+
+        sfxPlayer[sfxCursor].Play();
+        sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
+    }
+
 }

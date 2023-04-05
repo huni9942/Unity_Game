@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.instance.isLive)
             return;
 
+        anim.SetFloat("Speed", inputVec.magnitude);
+
         // ** 플레이어가 바라보는 방향에 따라 이미지 반전
         if (inputVec.x != 0)
         {

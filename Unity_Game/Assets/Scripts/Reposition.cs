@@ -33,6 +33,8 @@ public class Reposition : MonoBehaviour
         float dirX = playerDir.x < 0 ? -1 : 1;
         float dirY = playerDir.y < 0 ? -1 : 1;
 
+        
+
         // ** tag에 따른 오브젝트 재배치
         switch (transform.tag)
         {
