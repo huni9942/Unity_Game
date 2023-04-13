@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 
 
@@ -63,6 +64,8 @@ public class PM : MonoBehaviour
 		form.AddField("pass", pass);
 
 		StartCoroutine(Post(form));
+
+		SceneManager.LoadScene("GameStart");
 	}
 
 
