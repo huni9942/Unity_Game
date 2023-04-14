@@ -65,7 +65,7 @@ public class PM : MonoBehaviour
 
 		StartCoroutine(Post(form));
 
-		SceneManager.LoadScene("GameStart");
+		SceneManager.LoadScene("ProgressScene");
 	}
 
 
@@ -82,6 +82,8 @@ public class PM : MonoBehaviour
 	{
 		using (UnityWebRequest www = UnityWebRequest.Post(URL, form)) // 반드시 using을 써야한다
 		{
+			www.uploadHandler.Dispose();
+
 			yield return www.SendWebRequest();
 
 			if (www.isDone) Response(www.downloadHandler.text);

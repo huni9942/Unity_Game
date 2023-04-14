@@ -26,7 +26,7 @@ public class ProgressBar : MonoBehaviour
             text.text = progress + "%";
 
             timer += Time.deltaTime;
-            if (asyncOperation.progress < 1.0f)
+            if (asyncOperation.progress < 0.9f)
             {
                 BlackImage.fillAmount = Mathf.Lerp(BlackImage.fillAmount, asyncOperation.progress, timer);
                 if ( BlackImage.fillAmount >= asyncOperation.progress)
@@ -38,17 +38,25 @@ public class ProgressBar : MonoBehaviour
             else
             {
                 BlackImage.fillAmount = Mathf.Lerp(BlackImage.fillAmount, 1f, timer);
-                if (BlackImage.fillAmount == 1.0f)
-                {
-                    yield return new WaitForSeconds(1.0f);
-
-                    messagetext.gameObject.SetActive(true);
-
-                    if (Input.GetMouseButtonDown(0))
-                        asyncOperation.allowSceneActivation = true;
-                }
+                
             }
             yield return null;
         }
     }
+
+    void Update()
+    {
+        if (BlackImage.fillAmount >= 1.0f)
+        {
+            messagetext.gameObject.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                asyncOperation.allowSceneActivation = true;
+            }
+        }
+    }
 }
+
+
+
