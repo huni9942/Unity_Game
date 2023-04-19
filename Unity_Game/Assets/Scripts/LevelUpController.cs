@@ -22,6 +22,8 @@ public class LevelUpController : MonoBehaviour
         // ** UI°¡ ¿­¸± ¶§
         rect.localScale = Vector3.one;
         GameManager.instance.Stop();
+        AudioManager.instance.PlayeSfx(AudioManager.Sfx.LevelUp);
+        AudioManager.instance.EffectBgm(true);
     }
 
     public void Hide()
@@ -29,6 +31,8 @@ public class LevelUpController : MonoBehaviour
         // ** UI°¡ ´ÝÈú ¶§
         rect.localScale = Vector3.zero;
         GameManager.instance.Resume();
+        AudioManager.instance.PlayeSfx(AudioManager.Sfx.Select);
+        AudioManager.instance.EffectBgm(false);
     }
 
     public void Select(int index)

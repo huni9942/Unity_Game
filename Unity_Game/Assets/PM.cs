@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class GoogleData
 {
-	public string order, result, msg;
+	public string order, result, msg, id, pass, level;
 }
 
 
@@ -19,16 +19,11 @@ public class PM : MonoBehaviour
 	const string URL = "https://script.google.com/macros/s/AKfycbxLmNi7NneG0Q3QVeEGQFH7nZcr8pyUqpaa68mUt5sRTz_M1Bulg9NdkQi4TdPRuTRC-g/exec";
 	public GoogleData GD;
 	public InputField ID, Password;
-	string id, pass;
-
-
+	string level = "2";
 
 	bool SetIDPass()
 	{
-		id = ID.text.Trim();
-		pass = Password.text.Trim();
-
-		if (id == "" || pass == "") return false;
+		if (ID.text.Trim() == "" || Password.text.Trim() == "") return false;
 		else return true;
 	}
 
@@ -43,8 +38,8 @@ public class PM : MonoBehaviour
 
 		WWWForm form = new WWWForm();
 		form.AddField("order", "register");
-		form.AddField("id", id);
-		form.AddField("pass", pass);
+		form.AddField("id", ID.text.Trim());
+		form.AddField("pass", Password.text.Trim());
 
 		StartCoroutine(Post(form));
 	}
@@ -60,8 +55,8 @@ public class PM : MonoBehaviour
 
 		WWWForm form = new WWWForm();
 		form.AddField("order", "login");
-		form.AddField("id", id);
-		form.AddField("pass", pass);
+		form.AddField("id", ID.text.Trim());
+		form.AddField("pass", Password.text.Trim());
 
 		StartCoroutine(Post(form));
 
@@ -77,12 +72,29 @@ public class PM : MonoBehaviour
 		StartCoroutine(Post(form));
 	}
 
+	public void SetValue()
+	{
+		WWWForm form = new WWWForm();
+		form.AddField("order", "setValue");
+		form.AddField("level", level);
+
+		StartCoroutine(Post(form));
+	}
+
+
+	public void GetValue()
+	{
+		WWWForm form = new WWWForm();
+		form.AddField("order", "getValue");
+
+		StartCoroutine(Post(form));
+	}
 
 	IEnumerator Post(WWWForm form)
 	{
-		using (UnityWebRequest www = UnityWebRequest.Post(URL, form)) // 반드시 using을 써야한다
+		using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
 		{
-			www.uploadHandler.Dispose();
+			
 
 			yield return www.SendWebRequest();
 
@@ -105,5 +117,10 @@ public class PM : MonoBehaviour
 		}
 
 		print(GD.order + "을 실행했습니다. 메시지 : " + GD.msg);
+
+		if (GD.order == "getValue")
+		{
+			level = GD.level;
+		}
 	}
 }

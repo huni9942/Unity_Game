@@ -119,7 +119,8 @@ public class EnemyController : MonoBehaviour
         {
             // ** Hit 애니메이션 출력
             anim.SetTrigger("Hit");
-            GameManager.instance.SfxPlay(GameManager.Sfx.Hit0);
+            AudioManager.instance.PlayeSfx(AudioManager.Sfx.Hit);
+
         }
         // ** 사망 시
         else
@@ -129,9 +130,12 @@ public class EnemyController : MonoBehaviour
             rigid.simulated = false;
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
-            GameManager.instance.SfxPlay(GameManager.Sfx.Dead);
             GameManager.instance.kill++;
             GameManager.instance.GetExp();
+
+            if ( GameManager.instance.isLive)
+                AudioManager.instance.PlayeSfx(AudioManager.Sfx.Dead);
+
         }
     }
 
