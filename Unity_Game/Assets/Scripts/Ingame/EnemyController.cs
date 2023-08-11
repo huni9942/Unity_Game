@@ -19,6 +19,8 @@ public class EnemyController : MonoBehaviour
     // ** Enemy가 추적할 타겟
     public Rigidbody2D target;
 
+    public GameObject[] expPrefab;
+
     // ** Enemy의 생존 여부
     bool isLive;
 

@@ -9,7 +9,7 @@ public class HandController : MonoBehaviour
 
     // ** 스프라이트
     public SpriteRenderer spriter;
-    SpriteRenderer player;
+    public SpriteRenderer player;
 
     // ** 오른손 위치
     Vector3 rightPos = new Vector3(0.35f, 0.5f, 0);

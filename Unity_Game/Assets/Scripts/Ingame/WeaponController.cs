@@ -24,6 +24,7 @@ public class WeaponController : MonoBehaviour
 
     // ** 플레이어
     PlayerController player;
+    HandController hand;
 
     void Awake()
     {
@@ -110,7 +111,7 @@ public class WeaponController : MonoBehaviour
         }
 
         // ** 손 세팅
-        HandController hand = player.hands[(int)data.itemType];
+        hand = player.hands[(int)data.itemType];
         hand.spriter.sprite = data.hand;
         hand.gameObject.SetActive(true);
 
@@ -153,6 +154,7 @@ public class WeaponController : MonoBehaviour
     }
     void Fire()
     {
+
         // ** 근접한 타겟이 존재하지 않을 경우
         if (!player.scanner.nearestTarget)
             return;
