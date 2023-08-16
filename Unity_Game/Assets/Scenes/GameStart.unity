@@ -10118,6 +10118,7 @@ MonoBehaviour:
   - {fileID: 640651225349286171, guid: 4cb571387a1ed6c40b9cf4997898359f, type: 3}
   - {fileID: 6835632376091267957, guid: 96ef4d1d5b4f00049b3d6cab9e4d9ad3, type: 3}
   - {fileID: 6835632376091267957, guid: 91e9f4d3c9a61ac4cba211680fd8e416, type: 3}
+  - {fileID: 4624526753270811321, guid: 37b52dfcf4e181748b6598e38379f503, type: 3}
 --- !u!1 &467585110
 GameObject:
   m_ObjectHideFlags: 0
@@ -13239,6 +13240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLeft: 0
   spriter: {fileID: 1132730586}
+  player: {fileID: 0}
 --- !u!1 &1143257215
 GameObject:
   m_ObjectHideFlags: 0
@@ -24124,6 +24126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLeft: 1
   spriter: {fileID: 1686525666}
+  player: {fileID: 0}
 --- !u!1 &1692094741
 GameObject:
   m_ObjectHideFlags: 0
@@ -25022,7 +25025,7 @@ GameObject:
   - component: {fileID: 1984569157}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25104,7 +25107,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 999
   m_Sprite: {fileID: 2305144062599850415, guid: 220d39c4bfd8a5f43897c04e5a02c406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -19,8 +19,6 @@ public class EnemyController : MonoBehaviour
     // ** Enemy가 추적할 타겟
     public Rigidbody2D target;
 
-    public GameObject[] expPrefab;
-
     // ** Enemy의 생존 여부
     bool isLive;
 
@@ -121,7 +119,6 @@ public class EnemyController : MonoBehaviour
         {
             // ** Hit 애니메이션 출력
             anim.SetTrigger("Hit");
-            AudioManager.instance.PlayeSfx(AudioManager.Sfx.Hit);
 
         }
         // ** 사망 시
@@ -133,11 +130,9 @@ public class EnemyController : MonoBehaviour
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
-            GameManager.instance.GetExp();
-
-            if ( GameManager.instance.isLive)
-                AudioManager.instance.PlayeSfx(AudioManager.Sfx.Dead);
-
+            GameObject exp = GameManager.instance.pool.Get(4);
+            exp.transform.position = gameObject.transform.position;
+            Invoke("Dead", 1.0f);
         }
     }
 
