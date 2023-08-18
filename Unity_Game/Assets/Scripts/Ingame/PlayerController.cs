@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         // ** 정지 시
         if (!GameManager.instance.isLive)
             return;
-
+        spriter.color = Color.white;
         // ** 입력받은 값으로 플레이어 이동
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
 
         // ** 피격 시
         GameManager.instance.health -= Time.deltaTime * 10;
+        spriter.color = Color.red;
 
         // ** 사망 시
         if (GameManager.instance.health < 0)

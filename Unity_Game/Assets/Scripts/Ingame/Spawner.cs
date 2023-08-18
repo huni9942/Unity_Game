@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
 
     // ** Enemy의 소환 간격
     float timer;
+    float boxTimer;
 
     void Awake()
     {
@@ -37,6 +38,14 @@ public class Spawner : MonoBehaviour
             timer = 0;
             Spawn();
         }
+
+        boxTimer += Time.deltaTime;
+
+        if(boxTimer > spawnData[level].boxSpawnTime)
+        {
+            boxTimer = 0;
+            BoxSpawn();
+        }
     }
 
     void Spawn()
@@ -49,6 +58,15 @@ public class Spawner : MonoBehaviour
 
         // ** 소환된 Enemy에 소환 데이터 인자값 전달
         enemy.GetComponent<EnemyController>().Init(spawnData[level]);
+    }
+
+    void BoxSpawn()
+    {
+        GameObject Box = GameManager.instance.pool.Get(5);
+
+        Box.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+
+        Box.GetComponent<BoxController>().Init();
     }
 }
 
@@ -66,4 +84,6 @@ public class SpawnData
 
     // ** 소환될 Enemy의 속도
     public float speed;
+
+    public float boxSpawnTime;
 }

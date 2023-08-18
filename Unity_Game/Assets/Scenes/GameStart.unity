@@ -10119,6 +10119,8 @@ MonoBehaviour:
   - {fileID: 6835632376091267957, guid: 96ef4d1d5b4f00049b3d6cab9e4d9ad3, type: 3}
   - {fileID: 6835632376091267957, guid: 91e9f4d3c9a61ac4cba211680fd8e416, type: 3}
   - {fileID: 4624526753270811321, guid: 37b52dfcf4e181748b6598e38379f503, type: 3}
+  - {fileID: 316933877583170383, guid: edd0cbda97d282340ba9884a6cbcc130, type: 3}
+  - {fileID: 416967963662851880, guid: 02ed28256ef5ee14683ac3f4618f35e7, type: 3}
 --- !u!1 &467585110
 GameObject:
   m_ObjectHideFlags: 0
@@ -11787,14 +11789,17 @@ MonoBehaviour:
     spriteType: 0
     health: 10
     speed: 1.5
+    boxSpawnTime: 5
   - spawnTime: 0.2
     spriteType: 1
     health: 15
     speed: 2.4
+    boxSpawnTime: 5
   - spawnTime: 0.1
     spriteType: 2
     health: 20
     speed: 3
+    boxSpawnTime: 5
 --- !u!1 &787578420
 GameObject:
   m_ObjectHideFlags: 0
@@ -19705,20 +19710,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1661388766}
     m_ColliderPaths:
-    - - X: 100000000
-        Y: 100000000
-      - X: -100000000
-        Y: 100000000
-      - X: -100000000
-        Y: -100000000
-      - X: 100000000
-        Y: -100000000
+    - - X: 100000040
+        Y: 100000096
+      - X: -100000040
+        Y: 100000096
+      - X: -100000096
+        Y: 100000040
+      - X: -100000096
+        Y: -100000040
+      - X: -100000040
+        Y: -100000096
+      - X: 100000040
+        Y: -100000096
+      - X: 100000096
+        Y: -100000040
+      - X: 100000096
+        Y: 100000040
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -10}
-      - {x: 9.99997, y: 10}
-      - {x: -10, y: 9.99997}
-      - {x: -9.99997, y: -10}
+    - - {x: 9.999974, y: -10.00001}
+      - {x: 9.999974, y: 10.00001}
+      - {x: -10.00001, y: 9.999974}
+      - {x: -9.999974, y: -10.00001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1661388765
