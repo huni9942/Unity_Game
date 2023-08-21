@@ -19083,6 +19083,7 @@ MonoBehaviour:
   uiLevelUp: {fileID: 1037660587}
   uiResult: {fileID: 695631936}
   enemyCleaner: {fileID: 223963660}
+  magOn: 0
 --- !u!4 &1548111025
 Transform:
   m_ObjectHideFlags: 0

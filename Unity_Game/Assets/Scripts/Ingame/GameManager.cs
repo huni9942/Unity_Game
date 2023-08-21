@@ -62,12 +62,16 @@ public class GameManager : MonoBehaviour
     // ** 몬스터 클리너
     public GameObject enemyCleaner;
 
+    // ** 자석 상태
+    public bool magOn;
+
 
     void Awake()
     {
         // ** 화면 크기 900 * 900으로 조정 및 변경 불가
         Screen.SetResolution(900, 900, false);
         instance = this;
+        magOn = false;
     }
 
     public void GameStart(int id)
@@ -142,10 +146,6 @@ public class GameManager : MonoBehaviour
         uiResult.gameObject.SetActive(true);
         uiResult.Win();
         Stop();
-
-        AudioManager.instance.PlayBgm(false);
-        AudioManager.instance.PlayeSfx(AudioManager.Sfx.Win);
-
     }
 
     public void GameRetry()
